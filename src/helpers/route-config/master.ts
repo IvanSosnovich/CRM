@@ -11,6 +11,6 @@ export const masterSideBarLink = [
     {
         link: '/orders',
         name: 'Заказы',
-        icon: ''
+        icon: 'border_all_icon'
     },
 ]

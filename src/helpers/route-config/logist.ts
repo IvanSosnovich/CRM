@@ -16,11 +16,11 @@ export const logistSideBarLink = [
     {
         link: '/',
         name: 'Маршрутка',
-        icon: ''
+        icon: 'add_road'
     },
     {
         link: '/orders',
         name: 'Заказы',
-        icon: ''
+        icon: 'border_all_icon'
     },
 ]

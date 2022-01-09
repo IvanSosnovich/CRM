@@ -8,6 +8,8 @@ import { userSelector } from '../../redux/selectors'
 import { InitialWrapper } from '../../components/initial-wrapper'
 import {User, SideBarConfig, RoutingConfig} from '../../interfaces';
 import { getRoutingWitUserRole } from '../../helpers/route-config'
+import { MainContainerStyled, ContentContainerStyled, WrapperContentStyled } from './style'
+import {SideBar} from '../../components/side-bar';
 interface Props {
     user: User | null
 }
@@ -22,29 +24,29 @@ const MainContainer: React.FC<Props> = ({ user }) => {
         setRoutingConfig(routingConfig)
     }, [user])
     return (
-        <InitialWrapper>
-            <Router>
-                <>
-                    <>
-                        {/*// TODO - тут надо будет замапить сайд бар в зависимости от роли */}
-                        {map(sideBarActions, ({name}) => <h1>{name}</h1>)}
-                    </>
-                    <Switch>
-                        {map(routingActions, (route) => {
-                            return (
-                                <Route
-                                    key={route.path}
-                                    exact path={route.path}
-                                >
-                                    <route.component />
-                                </Route>
-                            )
-                        })}
-                    </Switch>
-                    <h1>MainContainer</h1>
-                </>
-            </Router>
-        </InitialWrapper>
+        <MainContainerStyled>
+            <InitialWrapper>
+                <Router>
+                    <ContentContainerStyled>
+                        <SideBar sideBarActions={sideBarActions} user={user}/>
+                        <Switch>
+                            <WrapperContentStyled>
+                                {map(routingActions, (route) => {
+                                    return (
+                                        <Route
+                                            key={route.path}
+                                            exact path={route.path}
+                                        >
+                                            <route.component />
+                                        </Route>
+                                    )
+                                })}
+                            </WrapperContentStyled>
+                        </Switch>
+                    </ContentContainerStyled>
+                </Router>
+            </InitialWrapper>
+        </MainContainerStyled>
     )
 }
 
