@@ -7,7 +7,7 @@ const initialState: UserState = {
     user: {
         id: '213123',
         name: 'Ivan',
-        role: 'ADMIN',
+        role: 'OPERATION',
         phone: '21312312'
     }
 }

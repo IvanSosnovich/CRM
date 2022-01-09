@@ -30,21 +30,21 @@ export const superAdminSideBarLink = [
     {
         link: '/',
         name: 'Маршрутка',
-        icon: ''
+        icon: 'add_road'
     },
     {
         link: '/orders',
         name: 'Заказы',
-        icon: ''
+        icon: 'border_all_icon'
     },
     {
         link: '/statistics',
         name: 'Статистика',
-        icon: ''
+        icon: 'leaderboard'
     },
     {
         link: '/users',
         name: 'Мастера',
-        icon: ''
+        icon: 'android'
     },
 ]

@@ -2,15 +2,15 @@ import { Orders } from '../../pages/orders'
 
 export const operatorRouteConfig = [
     {
-        path: '/orders',
+        path: '/',
         component: Orders
     },
 ]
 
 export const operatorSideBarLink = [
     {
-        link: '/orders',
+        link: '/',
         name: 'Заказы',
-        icon: ''
+        icon: 'border_all_icon'
     },
 ]
